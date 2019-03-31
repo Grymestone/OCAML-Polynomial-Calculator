@@ -1,6 +1,6 @@
 (* Sum type to encode efficiently polynomial expressions *)
 type pExp =
-  | Term of string*int (*
+  | Term of int*int (*
       First int is the constant
       Second int is the power of x 
       10  -> Term(10,0)
@@ -26,15 +26,14 @@ type pExp =
 let rec from_expr (_e: Expr.expr) : pExp =
     Printf.printf("from_expr called");
   match _e with
-    | Num(i) -> Term(string_of_int i, 1)
-    | Var(c) -> Term(Char.escaped c, 1)
+    | Num(i) -> Term(i, 1)
+    | Var(c) -> Term(1, 1)
+    | Num(i) -> Term(i, 0)
     | Add(e1,e2) -> Plus([from_expr e1; from_expr e2])
     | Sub(e1,e2) -> Minus([from_expr e1; from_expr e2])
     | Mul(e1,e2) -> Times([from_expr e1; from_expr e2])
-    | Pow(e,i) -> match e with
-                  | Var(c) -> Term(Char.escaped c, i)
-                  | _ -> Printf.printf("Bad exp for Power"); Term(string_of_int 0,0)
-    | _ -> Printf.printf("expr Not Handled."); Term(string_of_int 0,0)
+    | Pow(e,i) -> Term(1, i)
+    | _ -> Printf.printf("expr Not Handled."); Term(0,0)
 
 let find_max (le:int) (re:int) : int =
 if le > re then le

@@ -27,11 +27,7 @@ Warning: 2 shift/reduce conflicts were arbitrarily resolved.
 # Target: poly.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:poly.cmo, file:poly.ml, implem, ocaml, quiet, traverse }
 /home/grymestone/.opam/4.07.0/bin/ocamlc.opt -c -o poly.cmo poly.ml
 + /home/grymestone/.opam/4.07.0/bin/ocamlc.opt -c -o poly.cmo poly.ml
-File "poly.ml", line 28, characters 2-504:
-Warning 8: this pattern-matching is not exhaustive.
-Here is an example of a case that is not matched:
-(Pos _|Neg _)
-File "poly.ml", line 37, characters 6-7:
+File "poly.ml", line 31, characters 6-12:
 Warning 11: this match case is unused.
 # Target: main.cmo, tags: { byte, compile, extension:cmo, extension:ml, file:main.cmo, file:main.ml, implem, ocaml, quiet, traverse }
 /home/grymestone/.opam/4.07.0/bin/ocamlc.opt -c -o main.cmo main.ml
