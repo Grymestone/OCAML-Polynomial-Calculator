@@ -1,0 +1,22 @@
+((2*a)+(2*(a)^3))
+Parsed Plus 
+Parsed Times 
+Parsed Term 
+Parsed Term 
+Parsed Times 
+Parsed Term 
+Parsed Term 
+Entering Plus 
+Times inside Plus 
+Multiplying Terms 
+Result: 2x^1
+(2x^0) (1x^3) *(2x^1) +Degree of expression: 0 
+Entering Plus 
+Times inside Plus 
+Multiplying Terms 
+Result: 2x^3
+(2x^1) (2x^3) +Degree of expression: 0 
+Entering Plus 
+Adding Terms 
+(2x^1) (2x^3) +Degree of expression: 1 
+(2x^1) (2x^3) +
