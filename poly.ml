@@ -72,7 +72,7 @@ let rec print_pExp (_e: pExp): unit =
   try 
   match _e with
   | Term(n, e) -> Printf.printf("(%dx^%d) ") n e;
-  | Plus(l) -> print_pExp (List.hd l); Printf.printf("+");
+  | Plus(l) -> print_pExp (List.hd l); Printf.printf("+"); print_pExp (List.hd (List.tl l));
   | Times(l) -> List.iter print_pExp l; Printf.printf("")
   (* print_newline() *)
   with _ -> Printf.printf("Print Failure\n")
