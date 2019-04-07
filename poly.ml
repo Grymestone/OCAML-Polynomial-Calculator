@@ -108,22 +108,27 @@ let rec distributePlus (ll:pExp list) (rl:pExp list) : pExp list =
  ( List.map (fun s -> simplify1 (Times(rl @ [s]))) ll )
 
 and simplifyTimes (ol:pExp list) : pExp =
+  try 
   match List.hd ol with
-        | Plus(il) -> Printf.printf("Plus inside Times \n"); Plus(distributePlus (List.tl ol) il)
+        | Plus(il) -> Printf.printf("Plus inside Times \n"); Plus (distributePlus (List.tl ol) il)
         | Times(il) -> Printf.printf("Times inside Times \n");  Times(distributePlus (List.tl ol) il)
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
               match re with 
-              | Term(n1, ex1) -> Printf.printf("Result: %dx^%d\n") (n1*n) (ex1+ex); Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])
+              | Term(n1, ex1) -> Printf.printf("Result: %dx^%d\n") (n1*n) (ex1+ex); if List.length newList > 1 then
+                                                                                      Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])
+                                                                                    else
+                                                                                      Term(n1 * n, ex1 + ex)
               | _ -> Printf.printf("simplifyTimes Failure"); Times(ol)
         | _ -> Times(ol)
+    with _ -> Printf.printf("simplifyTimes Failure -> Empty List \n"); Times(ol)
 
 and simplify1 (e:pExp): pExp =
     match e with
     | Term(n, ex) -> Printf.printf("Just a Term, returning\n"); e
     | Times(ol) -> Printf.printf("Entering Times \n"); simplifyTimes ol  
-    | Plus(ol) ->Printf.printf("Entering Plus \n"); 
+    | Plus(ol) -> Printf.printf("Entering Plus \n"); 
     try 
         match List.hd ol with
               | Plus(il) -> Printf.printf("Plus inside Plus \n"); Plus ((List.tl ol) @ il)
@@ -133,7 +138,10 @@ and simplify1 (e:pExp): pExp =
                     let re = List.hd newList in
                     match re with 
                     | Term(n1, ex1) -> if ex1 = ex then
-                                          Plus(List.tl newList @ [Term (n1 + n, ex)])
+                                          if List.length newList > 1 then
+                                            Plus(List.tl newList @ [Term (n1 + n, ex)])
+                                          else
+                                            Term (n1 + n, ex)
                                         else 
                                           e
                     | _ -> e
