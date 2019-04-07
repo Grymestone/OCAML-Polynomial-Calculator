@@ -105,7 +105,7 @@ let rec distributePlus (ll:pExp list) (rl:pExp list) : pExp list =
   print_pExp (Times(rl));
   Printf.printf("\n Result \n");    
   print_pExp (Plus( List.map (fun s -> Times(rl @ [s])) ll ));
- ( List.map (fun s -> simplify1 (Times(rl @ [s]))) ll )
+  ( List.map (fun s -> simplify1 (Times(rl @ [s]))) ll )
 
 and simplifyTimes (ol:pExp list) : pExp =
   match List.hd ol with
