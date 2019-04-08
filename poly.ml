@@ -47,8 +47,8 @@ let rec degree (_e:pExp): int =
 try
   match _e with
       | Term(c, i) -> i
-      | Plus(l) -> find_max (degree (List.hd l)) (degree (List.hd l)) 
-      | Times(l) -> find_max (degree (List.hd l)) (degree (List.hd l)) 
+      | Plus(l) -> find_max (degree (List.hd l)) (degree (List.hd (List.tl l))) 
+      | Times(l) -> find_max (degree (List.hd l)) (degree (List.hd (List.tl l)))  
       | _ -> Printf.printf("expr Not Handled."); 0
 with _ -> Printf.printf("degree failure\n"); 0
 
@@ -70,15 +70,15 @@ let compare (e1: pExp) (e2: pExp) : bool =
   Hint 1: Print () around elements that are not Term() 
   Hint 2: Recurse on the elements of Plus[..] or Times[..]
 *)
-let rec print_pExp (_e: pExp): unit =
-  (* TODO *)
-  try 
-  match _e with
-  | Term(n, e) -> Printf.printf("(%dx^%d) ") n e;
-  | Plus(l) -> List.iter print_pExp l; Printf.printf("+");
-  | Times(l) -> List.iter print_pExp l; Printf.printf("*")
-  (* print_newline() *)
-  with _ -> Printf.printf("Print Failure\n")
+ let rec print_pExp (_e: pExp): unit =
+    (* TODO *)
+    try 
+    match _e with
+    | Term(n, e) -> Printf.printf("%dx^%d") n e;
+    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
+    | Times(l) -> print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l);
+    (* print_newline() *)
+    with _ -> Printf.printf("Print Failure\n")
 
 (* 
   Function to simplify (one pass) pExpr
@@ -97,6 +97,14 @@ let rec print_pExp (_e: pExp): unit =
       => Plus[Term(2,3); Term(6,5)]
   Hint 6: Find other situations that can arise
 *)
+
+let comparison (ti: pExp) (tl: pExp) : bool = 
+      match ti with 
+      | Term(n, ex) -> match tl with
+                    | Term (n1, ex1) -> if ex >= ex1 then true
+                                        else false
+                    | _ -> false
+      | _ -> false
 
 let rec distributePlus (ll:pExp list) (rl:pExp list) : pExp list = 
   Printf.printf("\n Distributing... Starting with Plus operators\n");
@@ -133,18 +141,27 @@ and simplify1 (e:pExp): pExp =
         match List.hd ol with
               | Plus(il) -> Printf.printf("Plus inside Plus \n"); Plus ((List.tl ol) @ il)
               | Times(il) -> Printf.printf("Times inside Plus \n"); Plus ((List.tl ol) @ [(simplifyTimes il)])
-              | Term(n, ex) -> Printf.printf("Adding Terms \n"); 
+              | Term(n, ex) -> Printf.printf("Adding Terms \n");
                     let newList = List.tl ol in
                     let re = List.hd newList in
+                    print_pExp re;
                     match re with 
                     | Term(n1, ex1) -> if ex1 = ex then
                                           if List.length newList > 1 then
-                                            Plus(List.tl newList @ [Term (n1 + n, ex)])
+                                          let ret = List.tl newList @ [Term (n1 + n, ex)] in
+                                          (* let ret2 = Sort.list comparison ret in  *)
+                                          Plus(ret)
                                           else
                                             Term (n1 + n, ex)
                                         else 
-                                          e
-                    | _ -> e
+                                          if List.length newList > 1 then
+                                            Plus(List.tl newList @ [simplify1 (Plus(List.tl newList))])
+                                          else
+                                            simplify1 (Plus(List.tl newList))
+                    | _ -> if List.length newList > 1 then
+                                            Plus(List.tl newList @ [simplify1 (Plus(List.tl newList))])
+                                          else
+                                            simplify1 (Plus(List.tl newList))
               | _ -> e
       with _ -> e
       | _ -> e
@@ -166,8 +183,25 @@ let equal_pExp (e1:pExp) (e2:pExp) : bool =
     | Plus (list) -> Plus(list)
     | _ -> Term(0,0)
     in
-    if ree = ree2 then true
-    else false
+    if ree = ree2 then
+      let reet = match e1 with
+        | Term (n, e) -> [Term(n, e)]
+        | Times (list) ->  list
+        | Plus (list) -> list
+        | _ -> []
+      in
+      let reet2 = match e2 with
+        | Term (n, e) ->  [Term(n, e)]
+        | Times (list) ->  (list)
+        | Plus (list) -> (list)
+        | _ -> []
+      in
+      if List.length reet = List.length reet2 then
+        true
+      else
+        false
+    else 
+      false
 
 (* Fixed point version of simplify1 
   i.e. Apply simplify1 until no 
