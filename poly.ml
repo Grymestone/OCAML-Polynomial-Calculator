@@ -74,9 +74,10 @@ let compare (e1: pExp) (e2: pExp) : bool =
     (* TODO *)
     try 
     match _e with
-    | Term(n, e) -> Printf.printf("%dx^%d") n e;
-    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
-    | Times(l) -> print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l);
+    | Term(n, e) -> Printf.printf("%dx^%d,") n e;
+    | Plus(l) ->  (*Printf.printf("|Leneght %i  |") (List.length (List.tl l));*)
+            Printf.printf(",["); List.iter print_pExp l;  Printf.printf("]+");      
+    | Times(l) -> Printf.printf("["); List.iter print_pExp l; Printf.printf("]*");               
     (* print_newline() *)
     with _ -> Printf.printf("Print Failure\n")
 
@@ -123,11 +124,18 @@ and simplifyTimes (ol:pExp list) : pExp =
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
+              (* print_pExp re; *)
               match re with 
               | Term(n1, ex1) -> Printf.printf("Result: %dx^%d\n") (n1*n) (ex1+ex); if List.length newList > 1 then
-                                                                                      Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])
+                                                                                      let re = (Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])) in
+                                                                                      (* print_pExp re; *)
+                                                                                      (* print_newline(); *)
+                                                                                      re
                                                                                     else
-                                                                                      Term(n1 * n, ex1 + ex)
+                                                                                      let ree = Term(n1 * n, ex1 + ex) in
+                                                                                      (* print_pExp ree; *)
+                                                                                      (* print_newline(); *)
+                                                                                      ree
               | _ -> Printf.printf("simplifyTimes Failure"); Times(ol)
         | _ -> Times(ol)
     with _ -> Printf.printf("simplifyTimes Failure -> Empty List \n"); Times(ol)
@@ -137,22 +145,28 @@ and simplify1 (e:pExp): pExp =
     | Term(n, ex) -> Printf.printf("Just a Term, returning\n"); e
     | Times(ol) -> Printf.printf("Entering Times \n"); simplifyTimes ol  
     | Plus(ol) -> Printf.printf("Entering Plus \n"); 
-    try 
+    try
         match List.hd ol with
               | Plus(il) -> Printf.printf("Plus inside Plus \n"); Plus ((List.tl ol) @ il)
-              | Times(il) -> Printf.printf("Times inside Plus \n"); Plus ((List.tl ol) @ [(simplifyTimes il)])
+              | Times(il) -> Printf.printf("Times inside Plus \n Head: "); print_pExp (Plus([List.hd ol])); print_newline(); Printf.printf("Tail: "); print_pExp (Times(List.tl ol)); print_newline() ; Printf.printf("Inner List: "); print_pExp (Times(il)); print_newline() ;Plus ((List.tl ol) @ [(simplifyTimes il)])
               | Term(n, ex) -> Printf.printf("Adding Terms \n");
                     let newList = List.tl ol in
                     let re = List.hd newList in
-                    print_pExp re;
+                    (* print_pExp re; *)
+                    (* print_newline(); *)
                     match re with 
                     | Term(n1, ex1) -> if ex1 = ex then
                                           if List.length newList > 1 then
                                           let ret = List.tl newList @ [Term (n1 + n, ex)] in
                                           (* let ret2 = Sort.list comparison ret in  *)
+                                          (* print_pExp (Plus(ret)); *)
+                                          (* print_newline(); *)
                                           Plus(ret)
                                           else
-                                            Term (n1 + n, ex)
+                                            let ree = (Term(n1+ n, ex)) in
+                                            (* print_pExp ree; *)
+                                            (* print_newline(); *)
+                                            ree
                                         else 
                                           if List.length newList > 1 then
                                             Plus(List.tl newList @ [simplify1 (Plus(List.tl newList))])
@@ -211,7 +225,7 @@ let rec simplify (e:pExp): pExp =
     let rE = simplify1(e) in
       print_pExp rE;
       let i = degree e in 
-      Printf.printf("Degree of expression: %i \n") i;
+      (* Printf.printf("Degree of expression: %i \n") i; *)
       if (equal_pExp e rE) then
         rE
       else  
