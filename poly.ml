@@ -15,11 +15,40 @@ type pExp =
   | Times of pExp list (* List of terms multiplied *)
 
 
+ let rec print_pExp (_e: pExp): unit =
+    (* TODO *)
+    try 
+    match _e with
+    | Term(n, e) -> Printf.printf("%dx^%d,") n e;
+    | Plus(l) ->  (*Printf.printf("|Leneght %i  |") (List.length (List.tl l));*)
+            Printf.printf("["); List.iter print_pExp l;  Printf.printf("]+");      
+    | Times(l) -> Printf.printf("["); List.iter print_pExp l; Printf.printf("]*");               
+    (* print_newline() *)
+    with _ -> Printf.printf("Print Failure\n")
+(*
+  let rec print_pExp (_e: pExp): unit =
+    (* TODO *)
+    try 
+    match _e with
+    | Term(n, e) -> Printf.printf("%dx^%d") n e;
+    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
+    | Times(l) -> Printf.printf("("); print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l); Printf.printf(")");
+    (* print_newline() *)
+    with _ -> Printf.printf("Print Failure\n")
+    *)
+
+
+  let rec distribute_pow e n =
+        match n with
+        | 1 -> e
+        | _ -> Times([e] @ [(distribute_pow e (n-1))])
+
+
 (*
   Function to traslate betwen AST expressions
   to pExp expressions
 *)
-let rec from_expr (_e: Expr.expr) : pExp =
+and from_expr (_e: Expr.expr) : pExp =
     (* Printf.printf("from_expr called \n"); *)
   match _e with
     | Var(c) -> Printf.printf("Parsed Term \n"); Term(1, 1)
@@ -29,7 +58,7 @@ let rec from_expr (_e: Expr.expr) : pExp =
     | Sub(e1, e2) -> Printf.printf("Parsed Sub \n"); Plus([from_expr e1; Times([Term(-1, 0); from_expr e2])])
     | Add(e1,e2) -> Printf.printf("Parsed Plus \n"); Plus([from_expr e1; from_expr e2])
     | Mul(e1,e2) -> Printf.printf("Parsed Times \n"); Times([from_expr e1; from_expr e2])
-    | Pow(e,i) -> Printf.printf("Parsed Term \n"); Term(1, i)
+    | Pow(e,i) -> Printf.printf("Parsed Pow Term \n"); let out = distribute_pow (from_expr e) i in print_pExp out; out
     | _ -> Printf.printf("expr Not Handled. \n"); Term(0,0)
 
 let find_max (le:int) (re:int) : int =
@@ -71,29 +100,6 @@ let compare (e1: pExp) (e2: pExp) : bool =
   Hint 2: Recurse on the elements of Plus[..] or Times[..]
 *)
 
-(*
- let rec print_pExp (_e: pExp): unit =
-    (* TODO *)
-    try 
-    match _e with
-    | Term(n, e) -> Printf.printf("%dx^%d,") n e;
-    | Plus(l) ->  (*Printf.printf("|Leneght %i  |") (List.length (List.tl l));*)
-            Printf.printf("["); List.iter print_pExp l;  Printf.printf("]+");      
-    | Times(l) -> Printf.printf("["); List.iter print_pExp l; Printf.printf("]*");               
-    (* print_newline() *)
-    with _ -> Printf.printf("Print Failure\n")
-    *)
-
-
-  let rec print_pExp (_e: pExp): unit =
-    (* TODO *)
-    try 
-    match _e with
-    | Term(n, e) -> Printf.printf("%dx^%d") n e;
-    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
-    | Times(l) -> print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l);
-    (* print_newline() *)
-    with _ -> Printf.printf("Print Failure\n")
 
 (* 
   Function to simplify (one pass) pExpr
@@ -165,7 +171,7 @@ and simplifyTimes (ol:pExp list) : pExp =
 
 and simplify1 (e:pExp): pExp =
     match e with
-    | Term(n, ex) -> Printf.printf("Just a Term, returning\n"); e
+    | Term(n, ex) -> Printf.printf("Just a Term, returning"); print_pExp e; Printf.printf("\n"); e
     | Times(ol) -> Printf.printf("Entering Times \n"); simplifyTimes ol  
     | Plus(ol) -> Printf.printf("Entering Plus \n"); 
     try

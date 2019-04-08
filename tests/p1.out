@@ -1,37 +1,5 @@
-((((((((((2*a)+(3*(a)^2))+(4*(a)^2))+(5*(a)^3))+(6*(a)^4))+(6*(a)^5))+(4*(a)^3))+(4*(a)^3))+(1*a))+-((1*a)))
-Parsed Plus 
-Parsed Neg 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
-Parsed Plus 
-Parsed Times 
-Parsed Term 
-Parsed Term 
+(((1*a)+(2*a)))^2
+Parsed Pow Term 
 Parsed Plus 
 Parsed Times 
 Parsed Term 
@@ -39,168 +7,76 @@ Parsed Term
 Parsed Times 
 Parsed Term 
 Parsed Term 
-Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: -1x^0 * 1x^0 * 1x^1 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 + 4x^0 * 1x^3 * 1x^0 * 1x^1
-Inner List: -1x^0 * 1x^0 * 1x^1
-Multiplying Terms 
+[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+[[1x^0,1x^1,]*[2x^0,1x^1,]*]+]*Entering Times 
+Plus inside Times 
+
+ Distributing... Starting with Plus operators
+[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+]+ 
+ Distributing multiplication 
+[[1x^0,1x^1,]*[2x^0,1x^1,]*]*
+ Result 
+[[[1x^0,1x^1,]*[2x^0,1x^1,]*[[1x^0,1x^1,]*[2x^0,1x^1,]*]+]*]+Entering Times 
+Times inside Times 
+
+ Distributing... Starting with Plus operators
+[[2x^0,1x^1,]*[[1x^0,1x^1,]*[2x^0,1x^1,]*]+]+ 
+ Distributing multiplication 
+[1x^0,1x^1,]*
+ Result 
+[[1x^0,1x^1,[2x^0,1x^1,]*]*[1x^0,1x^1,[[1x^0,1x^1,]*[2x^0,1x^1,]*]+]*]+Entering Times 
 Multiplying Terms 
 Result: 1x^1
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 + 4x^0 * 1x^3 + 1x^0 * 1x^1-1x^1
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 + 4x^0 * 1x^3 + 1x^0 * 1x^1-1x^1Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 1x^0 * 1x^1 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 * 4x^0 * 1x^3-1x^1
-Inner List: 1x^0 * 1x^1
+Entering Times 
 Multiplying Terms 
 Result: 1x^1
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 + 4x^0 * 1x^3-1x^11x^1
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3 + 4x^0 * 1x^31x^1-1x^1Entering Plus 
-Plus inside Plus 
 Entering Plus 
 Times inside Plus 
- Head: 4x^0 * 1x^3 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 * 4x^0 * 1x^3-1x^11x^1
-Inner List: 4x^0 * 1x^3
-Multiplying Terms 
-Result: 4x^3
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^3-1x^11x^14x^3
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5 + 4x^0 * 1x^31x^1-1x^14x^3Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 4x^0 * 1x^3 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 * 6x^0 * 1x^5-1x^11x^14x^3
-Inner List: 4x^0 * 1x^3
-Multiplying Terms 
-Result: 4x^3
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^5-1x^11x^14x^34x^3
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4 + 6x^0 * 1x^51x^1-1x^14x^34x^3Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 6x^0 * 1x^5 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 * 6x^0 * 1x^4-1x^11x^14x^34x^3
-Inner List: 6x^0 * 1x^5
-Multiplying Terms 
-Result: 6x^5
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^4-1x^11x^14x^34x^36x^5
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3 + 6x^0 * 1x^41x^1-1x^14x^34x^36x^5Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 6x^0 * 1x^4 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 * 5x^0 * 1x^3-1x^11x^14x^34x^36x^5
-Inner List: 6x^0 * 1x^4
-Multiplying Terms 
-Result: 6x^4
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^3-1x^11x^14x^34x^36x^56x^4
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2 + 5x^0 * 1x^31x^1-1x^14x^34x^36x^46x^5Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 5x^0 * 1x^3 * 
-Tail: 2x^0 * 1x^1 + 3x^0 * 1x^2 * 4x^0 * 1x^2-1x^11x^14x^34x^36x^46x^5
-Inner List: 5x^0 * 1x^3
-Multiplying Terms 
-Result: 5x^3
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^2-1x^11x^14x^34x^36x^46x^55x^3
-2x^0 * 1x^1 + 3x^0 * 1x^2 + 4x^0 * 1x^21x^1-1x^15x^34x^34x^36x^46x^5Entering Plus 
-Plus inside Plus 
-Entering Plus 
-Times inside Plus 
- Head: 4x^0 * 1x^2 * 
-Tail: 2x^0 * 1x^1 * 3x^0 * 1x^2-1x^11x^14x^34x^35x^36x^46x^5
-Inner List: 4x^0 * 1x^2
-Multiplying Terms 
-Result: 4x^2
-RESULT: 2x^0 * 1x^1 + 3x^0 * 1x^2-1x^11x^14x^34x^35x^36x^46x^54x^2
-2x^0 * 1x^1 + 3x^0 * 1x^21x^1-1x^14x^25x^34x^34x^36x^46x^5Entering Plus 
-Times inside Plus 
- Head: 2x^0 * 1x^1 * 
-Tail: 3x^0 * 1x^2 * -1x^11x^14x^24x^34x^35x^36x^46x^5
-Inner List: 2x^0 * 1x^1
+ Head: [[[[2x^0,1x^1,]*1x^1,]*[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]*]*
+Tail: []*
+Inner List: [[[2x^0,1x^1,]*1x^1,]*[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]*
+Times inside Times 
+
+ Distributing... Starting with Plus operators
+[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]+ 
+ Distributing multiplication 
+[[2x^0,1x^1,]*1x^1,]*
+ Result 
+[[[2x^0,1x^1,]*1x^1,[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]*]+Entering Times 
+Times inside Times 
+
+ Distributing... Starting with Plus operators
+[1x^1,[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]+ 
+ Distributing multiplication 
+[2x^0,1x^1,]*
+ Result 
+[[2x^0,1x^1,1x^1,]*[2x^0,1x^1,[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*]*]+Entering Times 
 Multiplying Terms 
 Result: 2x^1
-RESULT: 3x^0 * 1x^2 + -1x^11x^14x^24x^34x^35x^36x^46x^52x^1
-3x^0 * 1x^2 + 2x^11x^1-1x^14x^25x^34x^34x^36x^46x^5Entering Plus 
-Times inside Plus 
- Head: 3x^0 * 1x^2 * 
-Tail: -1x^1 * 1x^12x^14x^24x^34x^35x^36x^46x^5
-Inner List: 3x^0 * 1x^2
+Entering Times 
 Multiplying Terms 
-Result: 3x^2
-RESULT: -1x^1 + 1x^12x^14x^24x^34x^35x^36x^46x^53x^2
-2x^1 + 1x^1-1x^13x^24x^25x^34x^34x^36x^46x^5Entering Plus 
-Adding Terms 
-2x^1
-1x^1 + -1x^13x^24x^25x^34x^34x^36x^46x^5
-1x^1
-REE1
-THE ADDED LIST: -1x^1 + 3x^24x^25x^34x^34x^36x^46x^53x^1
+Result: 2x^1
+RESULT: [[[[1x^1,2x^1,]*[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*2x^1,]*]*]*]+
+[[[[1x^1,2x^1,]*[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*2x^1,]*]*]*]+degree failure
 Entering Plus 
-Adding Terms 
-3x^1
--1x^1 + 4x^23x^24x^34x^35x^36x^46x^5
--1x^1
-REE1
-THE ADDED LIST: 4x^2 + 3x^24x^34x^35x^36x^46x^52x^1
+Times inside Plus 
+ Head: [[[[1x^1,2x^1,]*[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*2x^1,]*]*]*]*
+Tail: []*
+Inner List: [[[1x^1,2x^1,]*[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*2x^1,]*]*]*
+Times inside Times 
+
+ Distributing... Starting with Plus operators
+[]+ 
+ Distributing multiplication 
+[[1x^1,2x^1,]*[[[[1x^0,1x^1,]*[2x^0,1x^1,]*]+1x^1,]*2x^1,]*]*
+ Result 
+[]+RESULT: [[]*]+
+[[]*]+degree failure
 Entering Plus 
-Adding Terms 
-2x^1
-3x^2 + 4x^25x^34x^34x^36x^46x^5
-3x^2
-REEE3
-Entering Plus 
-Adding Terms 
-3x^2
-4x^2 + 5x^34x^34x^36x^46x^5
-4x^2
-REE1
-THE ADDED LIST: 5x^3 + 4x^34x^36x^46x^57x^2
-Entering Plus 
-Adding Terms 
-7x^2
-4x^3 + 4x^35x^36x^46x^5
-4x^3
-REEE3
-Entering Plus 
-Adding Terms 
-4x^3
-4x^3 + 5x^36x^46x^5
-4x^3
-REE1
-THE ADDED LIST: 5x^3 + 6x^46x^58x^3
-Entering Plus 
-Adding Terms 
-8x^3
-5x^3 + 6x^46x^5
-5x^3
-REE1
-THE ADDED LIST: 6x^4 + 6x^513x^3
-Entering Plus 
-Adding Terms 
-13x^3
-6x^4 + 6x^5
-6x^4
-REEE3
-Entering Plus 
-Adding Terms 
-6x^4
-6x^5 + 
-6x^5
-REE4
-6x^4 + 6x^513x^3 + 6x^4 + 6x^57x^2 + 13x^3 + 6x^4 + 6x^52x^1 + 7x^2 + 13x^3 + 6x^4 + 6x^5Entering Plus 
-Adding Terms 
-2x^1
-7x^2 + 13x^3 + 6x^4 + 6x^5 + 
-7x^2 + 13x^3 + 6x^4 + 6x^5
-DOING PLUS
-Entering Plus 
-Plus inside Plus 
-2x^1 + 7x^2 + 13x^3 + 6x^4 + 6x^5
+Times inside Plus 
+ Head: [[]*]*
+Tail: []*
+Inner List: []*
+simplifyTimes Failure -> Empty List 
+RESULT: [[]*]+
+[[]*]+degree failure
+[[]*]+
