@@ -141,7 +141,7 @@ and simplifyTimes (ol:pExp list) : pExp =
   try 
   match List.hd ol with
         | Plus(il) -> Printf.printf("Plus inside Times. Head: "); print_pExp (List.hd ol); Printf.printf("Tail: "); print_pExp (Plus(il)); print_newline(); Plus (distributePlus il (List.tl ol))
-        | Times(il) -> Printf.printf("Times inside Times \n");  Times(distributePlus il (List.tl ol))
+        | Times(il) -> Printf.printf("Times inside Times \n");  Times( il @  (List.tl ol))
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
