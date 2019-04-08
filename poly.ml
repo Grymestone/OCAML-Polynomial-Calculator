@@ -14,7 +14,6 @@ type pExp =
   *)
   | Times of pExp list (* List of terms multiplied *)
 
-
  let rec print_pExp (_e: pExp): unit =
     (* TODO *)
     try 
@@ -25,7 +24,7 @@ type pExp =
     | Times(l) -> Printf.printf("["); List.iter print_pExp l; Printf.printf("]*");               
     (* print_newline() *)
     with _ -> Printf.printf("Print Failure\n")
-(*
+    (*
   let rec print_pExp (_e: pExp): unit =
     (* TODO *)
     try 
@@ -79,7 +78,7 @@ try
       | Plus(l) -> find_max (degree (List.hd l)) (degree (List.hd (List.tl l))) 
       | Times(l) -> find_max (degree (List.hd l)) (degree (List.hd (List.tl l)))  
       | _ -> Printf.printf("expr Not Handled."); 0
-with _ -> Printf.printf("degree failure\n"); 0
+with _ -> Printf.printf("degree failure: "); print_pExp _e; 0
 
 (* 
   Comparison function useful for sorting of Plus[..] args 
@@ -141,8 +140,8 @@ let rec distributePlus (ll:pExp list) (rl:pExp list) : pExp list =
 and simplifyTimes (ol:pExp list) : pExp =
   try 
   match List.hd ol with
-        | Plus(il) -> Printf.printf("Plus inside Times \n"); Plus (distributePlus (List.tl ol) il)
-        | Times(il) -> Printf.printf("Times inside Times \n");  Times(distributePlus (List.tl ol) il)
+        | Plus(il) -> Printf.printf("Plus inside Times. Head: "); print_pExp (List.hd ol); Printf.printf("Tail: "); print_pExp (Plus(il)); print_newline(); Plus (distributePlus il (List.tl ol))
+        | Times(il) -> Printf.printf("Times inside Times \n");  Times(distributePlus il (List.tl ol))
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
@@ -150,7 +149,7 @@ and simplifyTimes (ol:pExp list) : pExp =
               match re with 
               | Term(n1, ex1) -> Printf.printf("Result: %dx^%d\n") (n1*n) (ex1+ex); if List.length newList > 1 then
                                                                                       let re = (Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])) in
-                                                                                      (* print_pExp re; *)
+                                                                                      print_pExp re;
                                                                                       (* print_newline(); *)
                                                                                       re
                                                                                     else
@@ -176,10 +175,10 @@ and simplify1 (e:pExp): pExp =
     | Plus(ol) -> Printf.printf("Entering Plus \n"); 
     try
         match List.hd ol with
-              | Plus(il) -> Printf.printf("Plus inside Plus \n"); Plus ((List.tl ol) @ il)
-              | Times(il) -> Printf.printf("Times inside Plus \n Head: "); print_pExp (Times([List.hd ol])); print_newline(); Printf.printf("Tail: "); print_pExp (Times(Sort.list comparison (List.tl ol))); print_newline() ; Printf.printf("Inner List: "); print_pExp (Times(il)); print_newline() ; let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes il)]) in Printf.printf("RESULT: "); print_pExp out; Printf.printf("\n"); (match out with
-              | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in print_pExp out; print_newline; out
-              | _ -> out)
+              | Plus(il) -> Printf.printf("Plus inside Plus \n"); print_pExp (Plus(il)); Printf.printf(" tail: "); print_pExp (Plus(List.tl ol)); print_newline(); Plus ((List.tl ol) @ il)
+              | Times(il) -> Printf.printf("Times inside Plus "); print_pExp e; Printf.printf(" Head: "); print_pExp (Times([List.hd ol])); print_newline(); Printf.printf("Tail: "); print_pExp (Times(Sort.list comparison (List.tl ol))); print_newline() ; Printf.printf("Inner List: "); print_pExp (Times(il)); print_newline() ; let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes il)]) in Printf.printf("RESULT: "); print_pExp out; Printf.printf("\n"); (match out with
+                                                                | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in print_pExp out; print_newline; out
+                                                                | _ -> out)
               | Term(n, ex) -> Printf.printf("Adding Terms \n");
                     let newList = List.tl ol in
                     let re = List.hd newList in
