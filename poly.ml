@@ -172,8 +172,8 @@ and simplify1 (e:pExp): pExp =
     try
         match List.hd ol with
               | Plus(il) -> if (List.length ol) > 1 then simplify1 (Plus (Sort.list comparison ((List.tl ol) @ il))) else List.hd ol
-              | Times(il) -> let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes (Sort.list comparison il))]) in (match out with
-                                                                | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in out
+              | Times(il) -> let out = simplify1 (Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes (Sort.list comparison il))])) in (match out with
+                                                                | Plus(reeil) -> let out = simplify1 (Plus(Sort.list comparison reeil)) in out
                                                                 | _ -> out)
               | Term(n, ex) ->
                     let newList = List.tl ol in
@@ -197,9 +197,9 @@ and simplify1 (e:pExp): pExp =
                                           else
                                               let out = e in
                                               out
-                    | Plus(il) -> Plus(Sort.list comparison ([List.hd ol] @ [simplify1 (Plus(List.tl ol))]))
+                    | Plus(il) -> simplify1 (Plus(Sort.list comparison ([List.hd ol] @ [simplify1 (Plus(List.tl ol))])))
 
-                    | Times(il) -> let out = Plus ([List.hd ol] @ [simplify1 (Plus(List.tl ol))]) in out
+                    | Times(il) -> let out = Plus ([List.hd ol] @ [simplify1 (Plus(List.tl ol))]) in simplify1 out
               | _ -> e
       with _ -> e
       | _ -> e
