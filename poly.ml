@@ -136,7 +136,7 @@ and simplifyTimes (ol:pExp list) : pExp =
   try 
   match List.hd ol with
         | Plus(il) -> Printf.printf("Plus inside Times.\n"); Plus (distributePlus il (List.tl ol))
-        | Times(il) -> Printf.printf("Times inside Times \n"); let out = Times(Sort.list comparison ([simplifyTimes il] @ (List.tl ol))) in out
+        | Times(il) -> Printf.printf("Times inside Times \n"); let out = simplify1 (Times(Sort.list comparison ([simplifyTimes il] @ (List.tl ol)))) in out
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
@@ -172,8 +172,8 @@ and simplify1 (e:pExp): pExp =
     | Plus(ol) -> Printf.printf("Entering Plus \n"); 
     try
         match List.hd ol with
-              | Plus(il) -> Printf.printf("foo1"); if (List.length ol) > 1 then Plus(Sort.list comparison ((List.tl ol) @ il)) else List.hd ol
-              | Times(il) -> Printf.printf("foo2"); let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes (Sort.list comparison il))]) in (match out with
+              | Plus(il) -> if (List.length ol) > 1 then Plus (Sort.list comparison ((List.tl ol) @ il)) else List.hd ol
+              | Times(il) -> let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes (Sort.list comparison il))]) in (match out with
                                                                 | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in out
                                                                 | _ -> out)
               | Term(n, ex) -> Printf.printf("Adding Terms \n");
@@ -196,13 +196,13 @@ and simplify1 (e:pExp): pExp =
                                           if List.length newList > 1 then
                                           let ret2 = Sort.list comparison (List.tl ol) in
                                             Printf.printf("oof4");
-                                              let out = Plus(Sort.list comparison ([List.hd ol] @ [simplify1 (Plus(List.tl ol))])) in 
+                                              let out = Plus([List.hd ol] @ [simplify1 (Plus(List.tl ol))]) in 
                                             out
                                           else
                                               let out = e in
                                             Printf.printf("oof5");
                                               out
-                    | Plus(il) -> Printf.printf("oof6"); Plus([List.hd ol] @ [simplify1 (Plus(List.tl ol))])
+                    | Plus(il) -> Printf.printf("oof6"); Plus(Sort.list comparison ([List.hd ol] @ [simplify1 (Plus(List.tl ol))]))
 
                     | Times(il) -> Printf.printf("oof7"); let out = Plus ([List.hd ol] @ [simplify1 (Plus(List.tl ol))]) in out
               | _ -> e
@@ -213,39 +213,14 @@ and simplify1 (e:pExp): pExp =
   Compute if two pExp are the same 
   Make sure this code works before you work on simplify1  
 *)
-let equal_pExp (e1:pExp) (e2:pExp) : bool =
-  let ree = match e1 with
-    | Term (n, e) -> Term(n, e)
-    | Times (list) ->  Times(list)
-    | Plus (list) -> Plus(list)
-    | _ -> Term(0,0)
-    in
-  let ree2 = match e2 with
-    | Term (n, e) -> Term(n, e)
-    | Times (list) ->  Times(list)
-    | Plus (list) -> Plus(list)
-    | _ -> Term(0,0)
-    in
-    if ree = ree2 then
-      let reet = match e1 with
-        | Term (n, e) -> [Term(n, e)]
-        | Times (list) ->  list
-        | Plus (list) -> list
-        | _ -> []
-      in
-      let reet2 = match e2 with
-        | Term (n, e) ->  [Term(n, e)]
-        | Times (list) ->  (list)
-        | Plus (list) -> (list)
-        | _ -> []
-      in
-      if List.length reet = List.length reet2 then
-        true
-      else
-        false
-    else 
-      false
+let rec equal_pExp (e1:pExp) (e2:pExp) : bool =
+    match e1, e2 with
+    | Term(x1,y1), Term(x2, y2) -> if x1=x2 then if y1 = y2 then true else false else false
+    | Plus(t1), Plus(t2) -> equal_pExp (List.hd t1) (List.hd t2)
+    | Times(t1), Times(t2) -> equal_pExp (List.hd t1) (List.hd t2)
+    | (Term _ | Plus _ | Times _), _ -> false
 
+  
 (* Fixed point version of simplify1 
   i.e. Apply simplify1 until no 
   progress is made
@@ -254,6 +229,7 @@ let rec simplify (e:pExp): pExp =
     Printf.printf("SYMPLIFY e: "); print_pExp e; print_newline();
     let rE = simplify1(e) in
       (*print_pExp rE;*)
+    Printf.printf(""); print_pExp rE; print_newline();
       let i = degree e in 
       (* Printf.printf("Degree of expression: %i \n") i; *)
       if (equal_pExp e rE) then
