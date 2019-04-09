@@ -45,7 +45,7 @@ type pExp =
     try 
     match _e with
     | Term(n, e) -> Printf.printf("%dx^%d") n e;
-    | Plus(l) -> Printf.printf("("); print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l); Printf.printf(")");
+    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
     | Times(l) -> Printf.printf("("); print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l); Printf.printf(")");
     (* print_newline() *)
     with _ -> Printf.printf("Print Failure\n")
