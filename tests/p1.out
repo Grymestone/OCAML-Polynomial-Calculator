@@ -1,0 +1,420 @@
+(((1*a)+(2*(a)^2))*(((2*a)+(4*(a)^4)))^2)
+Parsed Times 
+Parsed Pow Term 
+Parsed Plus 
+Parsed Times 
+Parsed Pow Term 
+Parsed Term 
+(1x^1 * (1x^1 * (1x^1 * 1x^1)))Parsed Term 
+Parsed Times 
+Parsed Term 
+Parsed Term 
+(((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Parsed Plus 
+Parsed Times 
+Parsed Pow Term 
+Parsed Term 
+(1x^1 * 1x^1)Parsed Term 
+Parsed Times 
+Parsed Term 
+Parsed Term 
+Entering Times 
+Plus inside Times. Head: ((1x^0 * 1x^1) + (2x^0 * (1x^1 * 1x^1)))Tail: ((1x^0 * 1x^1) + (2x^0 * (1x^1 * 1x^1)))
+
+ Distributing... Starting with Plus operators
+((1x^0 * 1x^1) + (2x^0 * (1x^1 * 1x^1))) 
+ Distributing multiplication 
+((((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))) * )
+ Result 
+(((((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))) * (1x^0 * 1x^1)) + ((((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))) * (2x^0 * (1x^1 * 1x^1))))Entering Times 
+Times inside Times 
+Len: 2Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+(((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * )
+ Result 
+((((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * (2x^0 * 1x^1)) + (((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+((2x^0 * 1x^1) * )
+ Result 
+(((2x^0 * 1x^1) * (2x^0 * 1x^1)) + ((2x^0 * 1x^1) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+((2x^0 * 1x^1) * 2x^1)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)
+Entering Times 
+Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * )
+ Result 
+(((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * (2x^0 * 1x^1)) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+((2x^0 * 1x^1) * 4x^4)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)
+(((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (1x^0 * 1x^1))
+Entering Times 
+Times inside Times 
+Len: 2Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+(((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * )
+ Result 
+((((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * (2x^0 * 1x^1)) + (((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+((2x^0 * 1x^1) * )
+ Result 
+(((2x^0 * 1x^1) * (2x^0 * 1x^1)) + ((2x^0 * 1x^1) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+((2x^0 * 1x^1) * 2x^1)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)
+Entering Times 
+Plus inside Times. Head: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))Tail: ((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))))
+
+ Distributing... Starting with Plus operators
+((2x^0 * 1x^1) + (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))) 
+ Distributing multiplication 
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * )
+ Result 
+(((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * (2x^0 * 1x^1)) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * (4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1))))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+((2x^0 * 1x^1) * 4x^4)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)
+(((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1)))
+Entering Plus 
+Times inside Plus ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (1x^0 * 1x^1)) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1)))) Head: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (1x^0 * 1x^1)) * )
+Tail: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1))) * )
+Inner List: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (1x^0 * 1x^1))
+Plus inside Times. Head: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))Tail: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))
+
+ Distributing... Starting with Plus operators
+((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) 
+ Distributing multiplication 
+((1x^0 * 1x^1) * )
+ Result 
+(((1x^0 * 1x^1) * (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))) + ((1x^0 * 1x^1) * (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 1x^1
+m21x^1
+((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+Result: 1x^1
+m21x^1
+((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)
+RESULT: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1))) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)))
+Off: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1))) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)))
+Entering Plus 
+Times inside Plus ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1))) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1))) Head: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1))) * )
+Tail: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)) * )
+Inner List: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) * (2x^0 * (1x^1 * 1x^1)))
+Plus inside Times. Head: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))Tail: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))
+
+ Distributing... Starting with Plus operators
+((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) + (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))) 
+ Distributing multiplication 
+((2x^0 * (1x^1 * 1x^1)) * )
+ Result 
+(((2x^0 * (1x^1 * 1x^1)) * (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))) + ((2x^0 * (1x^1 * 1x^1)) * (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))))Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+2x^2
+((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)
+Entering Times 
+Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+2x^2
+((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)
+RESULT: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)))
+Off: ((((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)) + (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)))
+Entering Plus 
+Entering Plus 
+Entering Plus 
+Times inside Plus (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)) Head: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1) * )
+Tail: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1) * ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2))
+Inner List: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 1x^1)
+Plus inside Times. Head: (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))Tail: (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))
+
+ Distributing... Starting with Plus operators
+(((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) 
+ Distributing multiplication 
+(1x^1 * )
+ Result 
+((1x^1 * ((2x^0 * 1x^1) * 2x^1)) + (1x^1 * ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)))Entering Times 
+Multiplying Terms 
+m3((2x^0 * 1x^1) * 2x^1)Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+(2x^1 * 2x^1)
+oof2(2x^1 * 2x^1)Multiplying Terms 
+Result: 4x^2
+m24x^2
+Entering Times 
+Multiplying Terms 
+m3((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+(2x^1 * 4x^4)
+oof2(2x^1 * 4x^4)Multiplying Terms 
+Result: 8x^5
+m28x^5
+RESULT: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1) + ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5))
+Off: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1) + ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5))
+Entering Plus 
+Times inside Plus (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1) + ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5)) Head: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1) * )
+Tail: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) * ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5))
+Inner List: ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 1x^1)
+Plus inside Times. Head: (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))Tail: (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))
+
+ Distributing... Starting with Plus operators
+(((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) 
+ Distributing multiplication 
+(1x^1 * )
+ Result 
+((1x^1 * ((2x^0 * 1x^1) * 4x^4)) + (1x^1 * ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))Entering Times 
+Multiplying Terms 
+m3((2x^0 * 1x^1) * 4x^4)Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+(2x^1 * 4x^4)
+oof2(2x^1 * 4x^4)Multiplying Terms 
+Result: 8x^5
+m28x^5
+Entering Times 
+Multiplying Terms 
+m3((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+(4x^4 * 4x^4)
+oof2(4x^4 * 4x^4)Multiplying Terms 
+Result: 16x^8
+m216x^8
+RESULT: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5)(8x^5 + 16x^8))
+Off: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5)(8x^5 + 16x^8))
+Entering Plus 
+Times inside Plus (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) + ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)(4x^2 + 8x^5)(8x^5 + 16x^8)) Head: (((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2) * )
+Tail: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2) * (4x^2 + 8x^5)(8x^5 + 16x^8))
+Inner List: ((((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) * 2x^2)
+Plus inside Times. Head: (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))Tail: (((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1))
+
+ Distributing... Starting with Plus operators
+(((2x^0 * 1x^1) * 2x^1) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)) 
+ Distributing multiplication 
+(2x^2 * )
+ Result 
+((2x^2 * ((2x^0 * 1x^1) * 2x^1)) + (2x^2 * ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)))Entering Times 
+Multiplying Terms 
+m3((2x^0 * 1x^1) * 2x^1)Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+(2x^1 * 2x^1)
+oof2(2x^1 * 2x^1)Multiplying Terms 
+Result: 4x^2
+m24x^2
+Entering Times 
+Multiplying Terms 
+m3((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 2x^1)Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+(2x^1 * 4x^4)
+oof2(2x^1 * 4x^4)Multiplying Terms 
+Result: 8x^5
+m28x^5
+RESULT: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2) + (4x^2 + 8x^5)(8x^5 + 16x^8)(4x^2 + 8x^5))
+Off: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2) + (4x^2 + 8x^5)(8x^5 + 16x^8)(4x^2 + 8x^5))
+Entering Plus 
+Times inside Plus (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2) + (4x^2 + 8x^5)(8x^5 + 16x^8)(4x^2 + 8x^5)) Head: (((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2) * )
+Tail: ((4x^2 + 8x^5) * (8x^5 + 16x^8)(4x^2 + 8x^5))
+Inner List: ((((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) * 2x^2)
+Plus inside Times. Head: (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))Tail: (((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4))
+
+ Distributing... Starting with Plus operators
+(((2x^0 * 1x^1) * 4x^4) + ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)) 
+ Distributing multiplication 
+(2x^2 * )
+ Result 
+((2x^2 * ((2x^0 * 1x^1) * 4x^4)) + (2x^2 * ((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)))Entering Times 
+Multiplying Terms 
+m3((2x^0 * 1x^1) * 4x^4)Times inside Times 
+Len: 2Multiplying Terms 
+Result: 2x^1
+m22x^1
+(2x^1 * 4x^4)
+oof2(2x^1 * 4x^4)Multiplying Terms 
+Result: 8x^5
+m28x^5
+Entering Times 
+Multiplying Terms 
+m3((4x^0 * (1x^1 * (1x^1 * (1x^1 * 1x^1)))) * 4x^4)Times inside Times 
+Len: 2Multiplying Terms 
+m3(1x^1 * (1x^1 * (1x^1 * 1x^1)))Multiplying Terms 
+m3(1x^1 * (1x^1 * 1x^1))Multiplying Terms 
+m3(1x^1 * 1x^1)Multiplying Terms 
+Result: 1x^2
+m21x^2
+1x^3
+1x^4
+4x^4
+(4x^4 * 4x^4)
+oof2(4x^4 * 4x^4)Multiplying Terms 
+Result: 16x^8
+m216x^8
+RESULT: ((4x^2 + 8x^5) + (8x^5 + 16x^8)(4x^2 + 8x^5)(8x^5 + 16x^8))
+Off: ((4x^2 + 8x^5) + (8x^5 + 16x^8)(4x^2 + 8x^5)(8x^5 + 16x^8))
+Entering Plus 
+Entering Plus 
+Entering Plus 
+Entering Plus 
+Entering Plus 
+Adding Terms 
+4x^2
+(8x^5 + 8x^516x^84x^28x^58x^516x^8)
+8x^5
+REEE3
+Entering Plus 
+Adding Terms 
+8x^5
+(8x^5 + 16x^84x^28x^58x^516x^8)
+8x^5
+REE1
+THE ADDED LIST: (16x^8 + 4x^28x^58x^516x^816x^5)
+Entering Plus 
+Adding Terms 
+4x^2
+(16x^5 + 8x^58x^516x^816x^8)
+16x^5
+REEE3
+Entering Plus 
+Adding Terms 
+16x^5
+(8x^5 + 8x^516x^816x^8)
+8x^5
+REE1
+THE ADDED LIST: (8x^5 + 16x^816x^824x^5)
+Entering Plus 
+Adding Terms 
+24x^5
+(8x^5 + 16x^816x^8)
+8x^5
+REE1
+THE ADDED LIST: (16x^8 + 16x^832x^5)
+Entering Plus 
+Adding Terms 
+32x^5
+(16x^8 + 16x^8)
+16x^8
+REEE3
+Entering Plus 
+Adding Terms 
+16x^8
+(16x^8 + )
+16x^8
+REEE2
+(32x^5 + 32x^8)(4x^2 + (32x^5 + 32x^8))(4x^2 + (4x^2 + (32x^5 + 32x^8)))Entering Plus 
+Adding Terms 
+4x^2
+((4x^2 + (32x^5 + 32x^8)) + )
+(4x^2 + (32x^5 + 32x^8))
+DOING PLUS
+Entering Plus 
+(4x^2 + (4x^2 + (32x^5 + 32x^8)))

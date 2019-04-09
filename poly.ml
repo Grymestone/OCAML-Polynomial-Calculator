@@ -14,6 +14,7 @@ type pExp =
   *)
   | Times of pExp list (* List of terms multiplied *)
 
+  (*
  let rec print_pExp (_e: pExp): unit =
     (* TODO *)
     try 
@@ -24,17 +25,17 @@ type pExp =
     | Times(l) -> Printf.printf("["); List.iter print_pExp l; Printf.printf("]*");               
     (* print_newline() *)
     with _ -> Printf.printf("Print Failure\n")
-    (*
+*)
+
   let rec print_pExp (_e: pExp): unit =
     (* TODO *)
     try 
     match _e with
     | Term(n, e) -> Printf.printf("%dx^%d") n e;
-    | Plus(l) -> print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l);
+    | Plus(l) -> Printf.printf("("); print_pExp (List.hd l); Printf.printf(" + "); List.iter print_pExp (List.tl l); Printf.printf(")");
     | Times(l) -> Printf.printf("("); print_pExp (List.hd l); Printf.printf(" * "); List.iter print_pExp (List.tl l); Printf.printf(")");
     (* print_newline() *)
     with _ -> Printf.printf("Print Failure\n")
-    *)
 
 
   let rec distribute_pow e n =
@@ -141,7 +142,7 @@ and simplifyTimes (ol:pExp list) : pExp =
   try 
   match List.hd ol with
         | Plus(il) -> Printf.printf("Plus inside Times. Head: "); print_pExp (List.hd ol); Printf.printf("Tail: "); print_pExp (Plus(il)); print_newline(); Plus (distributePlus il (List.tl ol))
-        | Times(il) -> Printf.printf("Times inside Times \n");  Times( il @  (List.tl ol))
+        | Times(il) -> Printf.printf("Times inside Times \n"); Printf.printf "Len: %i" (List.length ol);  let out = Times(Sort.list comparison ([simplifyTimes il] @ (List.tl ol))) in print_pExp out; print_newline(); out
         | Term(n, ex) -> Printf.printf("Multiplying Terms \n"); 
               let newList = List.tl ol in
               let re = List.hd newList in
@@ -149,24 +150,26 @@ and simplifyTimes (ol:pExp list) : pExp =
               match re with 
               | Term(n1, ex1) -> Printf.printf("Result: %dx^%d\n") (n1*n) (ex1+ex); if List.length newList > 1 then
                                                                                       let re = (Times( List.tl newList @ [Term(n1 * n, ex1 + ex)])) in
+                                                                                      Printf.printf("m1");
                                                                                       print_pExp re;
-                                                                                      (* print_newline(); *)
+                                                                                      print_newline();
                                                                                       re
                                                                                     else
                                                                                       let ree = Term(n1 * n, ex1 + ex) in
-                                                                                      (* print_pExp ree; *)
-                                                                                      (* print_newline(); *)
+                                                                                      Printf.printf("m2");
+                                                                                      print_pExp ree;
+                                                                                      print_newline();
                                                                                       ree
-              | Times(ol) -> let out = simplifyTimes ol in 
+              | Times(ol) -> Printf.printf("m3"); print_pExp (Times(ol));  let out = simplifyTimes ol in 
                     ( match out with
-                        | Term (n2, ex2) -> Term(n * n2, ex2)
-                        | Plus _ -> failwith "oof"
-                        | Times _ -> failwith "oof2"
+                        | Term (n2, ex2) -> let out = Term(n * n2, ex2 + ex) in print_pExp out; print_newline(); out
+                        | Plus _ -> Printf.printf "oof"; failwith "oof"
+                        | Times(nn) -> Printf.printf "oof2"; print_pExp (Times(nn)); simplifyTimes nn
                     )
 
-              | _ -> Printf.printf("simplifyTimes Failure"); Times(ol)
+              | Plus(il) -> Printf.printf("simplifyTimes Failure"); simplify1 (Plus(il))
         | _ -> Times(ol)
-    with _ -> Printf.printf("simplifyTimes Failure -> Empty List \n"); Times(ol)
+  with _ -> Printf.printf("simplifyTimes Failure -> Empty List \n"); print_pExp (Times(ol)); print_newline();Times(ol)
 
 and simplify1 (e:pExp): pExp =
     match e with
@@ -175,9 +178,9 @@ and simplify1 (e:pExp): pExp =
     | Plus(ol) -> Printf.printf("Entering Plus \n"); 
     try
         match List.hd ol with
-              | Plus(il) -> Printf.printf("Plus inside Plus \n"); print_pExp (Plus(il)); Printf.printf(" tail: "); print_pExp (Plus(List.tl ol)); print_newline(); Plus ((List.tl ol) @ il)
+              | Plus(il) -> if (List.length ol) > 1 then Plus ((List.tl ol) @ il) else List.hd ol
               | Times(il) -> Printf.printf("Times inside Plus "); print_pExp e; Printf.printf(" Head: "); print_pExp (Times([List.hd ol])); print_newline(); Printf.printf("Tail: "); print_pExp (Times(Sort.list comparison (List.tl ol))); print_newline() ; Printf.printf("Inner List: "); print_pExp (Times(il)); print_newline() ; let out = Plus ((Sort.list comparison (List.tl ol)) @ [(simplifyTimes il)]) in Printf.printf("RESULT: "); print_pExp out; Printf.printf("\n"); (match out with
-                                                                | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in print_pExp out; print_newline; out
+                                                                | Plus(reeil) -> let out = Plus(Sort.list comparison reeil) in Printf.printf("Off: "); print_pExp out; print_newline(); out
                                                                 | _ -> out)
               | Term(n, ex) -> Printf.printf("Adding Terms \n");
                     let newList = List.tl ol in
